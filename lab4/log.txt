@@ -1,0 +1,16 @@
+Server started [PID 18892]
+Socket created
+Socket binded at port: 3204
+Starting listening for requests
+Accepted connection from client
+Forked subprocess to handle request with PID: 18938
+Started subprocess to handle request with PID: 18938
+Subprocess (PID: 18938) received message: wqd
+Subprocess (PID: 18938) send message: `(pid:18938, time:Tue Nov 30 18:12:15 2021) wqd`
+Subprocess (PID: 18938) received message: qwdsa
+Subprocess (PID: 18938) send message: `(pid:18938, time:Tue Nov 30 18:12:19 2021) qwdsa`
+Subprocess (PID: 18938) received message: asdasd
+Subprocess (PID: 18938) send message: `(pid:18938, time:Tue Nov 30 18:12:20 2021) asdasd`
+Subprocess (PID: 18938) received message: asdasd
+Subprocess (PID: 18938) send message: `(pid:18938, time:Tue Nov 30 18:12:22 2021) asdasd`
+Subprocess (PID: 18938) closed client socket

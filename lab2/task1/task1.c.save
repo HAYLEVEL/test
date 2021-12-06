@@ -1,0 +1,47 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <sys/wait.h>
+#include <errno.h>
+#include <string.h>
+#include <stdlib.h>
+void processChild() {
+    	int i;
+  for (i = 0; i < 4; i++) {
+printf("Child process\n");
+    printf("pid %i\n", getpid());
+    printf("gid %i\n", getgid());
+    printf("sid %i\n", getsid(0));
+  }
+    printf("Child process ended\n");
+    exit(EXIT_SUCCESS);
+}
+void processParent() {
+    
+    int i;
+  for (i = 0; i < 4; i++) {
+printf("Parent process\n");
+    printf("pid %i\n", getpid());
+    printf("gid %i\n", getgid());
+    printf("sid %i\n", getsid(0));
+ }
+}
+
+int main() {
+    pid_t childProcessPID = fork();
+    if(childProcessPID < 0)
+    {    
+        fprintf(stderr, "%s: %s\n", "Fork failed", strerror(errno));
+    exit(1);
+    }
+    if (childProcessPID == 0) {
+        processChild();
+    } else {
+        printf("Parent process started\n");
+        processParent();
+        printf("\nChild process pid: %i\n", childProcessPID);
+        wait(NULL);
+        printf("Parent process ended\n");
+        exit(EXIT_SUCCESS);
+    }
+
+}
